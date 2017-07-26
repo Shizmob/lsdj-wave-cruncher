@@ -1,11 +1,11 @@
-#!/usr/bin/python
-import pylsdj
+#!/usr/bin/env python
+from lib import pylsdj
 import sys
 import os.path
 
 # check argv length
 if (len(sys.argv) < 4):
-    sys.exit('Usage : python patcher.py ([SAVEFILE.sav] [#TRACKNUMBER] or [SONGFILE.srm|.lsdsng]) [SYNTH.snt] [#SYNTHNUMBER]')
+    sys.exit('Usage: {} ([SAVEFILE.sav] [#TRACKNUMBER] or [SONGFILE.srm|.lsdsng]) [SYNTH.snt] [#SYNTHNUMBER]'.format(sys.argv[0]))
 
 # get file patcher
 savpath = sys.argv[1]
