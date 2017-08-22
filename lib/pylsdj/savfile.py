@@ -1,7 +1,7 @@
 from . import bread_spec
-import bread
 import os
 import sys
+from . import bread
 from . import utils
 from .project import Project
 from . import blockutils

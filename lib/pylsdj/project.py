@@ -1,5 +1,5 @@
 import math
-import bread
+from . import bread
 from . import bread_spec as spec
 from .song import Song
 from . import filepack

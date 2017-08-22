@@ -1,11 +1,11 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 import pylsdj
 import sys
 import os.path
 
 # check argv length
-if (sys.argv <= 5):
-    sys.exit('Usage : python export.py ([SAVEFILE.sav] [#TRACKNUMBER] or [SONGFILE.srm|.lsdsng]) [#SYNTHNUMBER] [SYNTH.snt]')
+if len(sys.argv) < 4:
+    sys.exit('Usage: {} ([SAVEFILE.sav] [#TRACKNUMBER] or [SONGFILE.srm|.lsdsng]) [#SYNTHNUMBER] [SYNTH.snt]'.format(sys.argv[0]))
 
 # get file patcher
 savpath = sys.argv[1]
@@ -41,7 +41,7 @@ synthdata = [[(chunk[2*i] << 4) + chunk[2*i+1] for i in range(16)] for chunk in 
 synthdata = [byte for chunk in synthdata for byte in chunk]
 
 # log 'it's ok'
-print "Writing data to " + synthpath + "..."
+print("Writing data to {}...".format(synthpath))
 # open file
 fhandle = open(synthpath, "wb")
 # write the data to the file
@@ -51,4 +51,4 @@ fhandle.write(buf)
 fhandle.close()
 
 # log
-print "File has been written as " + synthpath + "."
+print("File has been written as {}.".format(synthpath))

@@ -54,7 +54,7 @@ fs.writeFile(filename, buf, function(err) {
 // create shell
 var args = process.argv.slice(4)
 args = _.take(args, args.length - 1).concat(filename, _.last(args))
-var shell = new PythonShell('./lib/patcher.py', { args: args })
+var shell = new PythonShell('./lib/patcher.py', { args: args, pythonPath: 'python3' })
 
 // log msgs
 shell.on('message', function (msg) {

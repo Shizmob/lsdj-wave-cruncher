@@ -10,7 +10,7 @@ if (process.argv.length < 5) {
 }
 
 // create shell
-var shell = new PythonShell('./lib/patcher.py', { args: process.argv.slice(2) })
+var shell = new PythonShell('./lib/patcher.py', { args: process.argv.slice(2), pythonPath: 'python3' })
 
 // log msgs
 shell.on('message', function (msg) {

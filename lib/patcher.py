@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 import pylsdj
 import sys
 import os.path

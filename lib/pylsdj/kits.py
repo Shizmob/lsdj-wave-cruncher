@@ -1,6 +1,6 @@
 import wave
 
-import bread as b
+from . import bread as b
 
 from .vendor.six.moves import range
 
